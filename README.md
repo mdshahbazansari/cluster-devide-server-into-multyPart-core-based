@@ -1,12 +1,12 @@
 # 🚀 Node.js Express Server – Single vs Cluster Mode
 
-👨‍💻 Author
-Shahbaz
+## 👨‍💻 Author  
+**Shahbaz**  
 📧 mdshahbaz8298@gmail.com
 
-This project demonstrates how to run an Express.js server in two ways:
+This project demonstrates how to run an Express.js server in two modes:
 
-1. **Single Process Mode** – A basic server using one CPU core.
+1. **Single Process Mode** – A basic server using one CPU core.  
 2. **Cluster Mode** – A scalable server using all available CPU cores via Node.js `cluster` module.
 
 ---
@@ -33,21 +33,30 @@ app.get('/', (req, res) => {
   res.send('Hello from Single Server! Process ID: ' + process.pid)
 })
 
-##  OUTPUT For - Normal Express Server (Single Core) 
+✅ Output
 Server started!
 Process ID: 14832
 Parent Process ID: 7420
-##-----------------------------------------------------------------------
 
+
+# 🚀 Node.js Express Server – Single vs Cluster Mode
+
+## 👨‍💻 Author  
+**Shahbaz**  
+📧 mdshahbaz8298@gmail.com
+
+This project demonstrates how to run an Express.js server in two modes:
+
+1. **Single Process Mode** – A basic server using one CPU core.  
 2. **Cluster Mode** – A scalable server using all available CPU cores via Node.js `cluster` module.
 
 ---
+
 ## 🧪 1. Normal Express Server (Single Core)
 
+This is the simplest way to create an Express server using a single process:
 
-This setup creates a worker for each CPU core to handle requests concurrently:
 ```js
-
 
 // server-cluster.js
 
@@ -66,20 +75,21 @@ if (cluster.isPrimary) {
 } else {
   try {
     const app = express()
+
     app.listen(8080, () => {
-      console.log(`server started on 8080 ! || Process Id: ${process.pid}`)
+      console.log(`Server started on port 8080 || Worker PID: ${process.pid}`)
     })
+
     app.get('/', (req, res) => {
-      res.send(process.pid)
+      res.send('Hello from Clustered Server! Process ID: ' + process.pid)
     })
   } catch (error) {
-    console.log('cluster creation failed !', error.message)
+    console.log('Cluster creation failed!', error.message)
   }
 }
 
-##  OUTPUT For - Clustered Express Server (Multi-Core)
+✅ Output (on a 4-core machine)
 Worker 1 started with PID 10124
 Worker 2 started with PID 10126
 Worker 3 started with PID 10128
 Worker 4 started with PID 10130
-
