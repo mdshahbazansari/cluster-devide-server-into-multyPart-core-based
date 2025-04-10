@@ -15,25 +15,7 @@ This project demonstrates how to run an Express.js server in two modes:
 
 This is the simplest way to create an Express server using a single process:
 
-##  OUTPUT - server-single.js
-Server started!
-Process ID: 14832
-Parent Process ID: 7420
-
-
-## 🧪 2. Clustered Express Server (Multi-Core)
-
-This setup uses Node.js's cluster module to fork the server into multiple workers, one for each CPU core:
-
-
-##  OUTPUT - server-cluster.js
-Worker 1 started with PID 10124
-Worker 2 started with PID 10126
-Worker 3 started with PID 10128
-Worker 4 started with PID 10130
-
 ```js
-
 // server-single.js
 
 import express from 'express'
@@ -52,6 +34,18 @@ app.get('/', (req, res) => {
 })
 
 
+##  OUTPUT - server-single.js
+Server started!
+Process ID: 14832
+Parent Process ID: 7420
+
+---
+
+## 🧪 2. Clustered Express Server (Multi-Core)
+
+This setup uses Node.js's cluster module to fork the server into multiple workers, one for each CPU core:
+
+```js
 
 // server-cluster.js
 
@@ -83,5 +77,10 @@ if (cluster.isPrimary) {
   }
 }
 
+##  OUTPUT - server-cluster.js
+Worker 1 started with PID 10124
+Worker 2 started with PID 10126
+Worker 3 started with PID 10128
+Worker 4 started with PID 10130
 
 
