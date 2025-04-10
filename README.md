@@ -39,7 +39,11 @@ Process ID: 14832
 Parent Process ID: 7420
 ##-----------------------------------------------------------------------
 
+2. **Cluster Mode** – A scalable server using all available CPU cores via Node.js `cluster` module.
+
+---
 ## 🧪 1. Normal Express Server (Single Core)
+
 
 This setup creates a worker for each CPU core to handle requests concurrently:
 ```js
