@@ -38,7 +38,9 @@ Server started!
 Process ID: 14832
 Parent Process ID: 7420
 ##-----------------------------------------------------------------------
-## 🧪 2. Clustered Express Server (Multi-Core)
+
+🧩 2. Clustered Express Server (Multi-Core)
+This setup creates a worker for each CPU core to handle requests concurrently:
 
 // server-cluster.js
 
