@@ -15,7 +15,7 @@ This project demonstrates how to run an Express.js server in two modes:
 
 This is the simplest way to create an Express server using a single process:
 
-```js
+
 // server-single.js
 
 import express from 'express'
@@ -39,24 +39,13 @@ Process ID: 14832
 Parent Process ID: 7420
 
 
-# 🚀 Node.js Express Server – Single vs Cluster Mode
-
-## 👨‍💻 Author  
-**Shahbaz**  
-📧 mdshahbaz8298@gmail.com
-
-This project demonstrates how to run an Express.js server in two modes:
-
-1. **Single Process Mode** – A basic server using one CPU core.  
 2. **Cluster Mode** – A scalable server using all available CPU cores via Node.js `cluster` module.
 
----
 
-## 🧪 1. Normal Express Server (Single Core)
+## 🧪 2. Clustered Express Server (Multi-Core)
 
-This is the simplest way to create an Express server using a single process:
+This setup creates a worker for each CPU core to handle requests concurrently:
 
-```js
 
 // server-cluster.js
 
@@ -93,3 +82,5 @@ Worker 1 started with PID 10124
 Worker 2 started with PID 10126
 Worker 3 started with PID 10128
 Worker 4 started with PID 10130
+
+```js
